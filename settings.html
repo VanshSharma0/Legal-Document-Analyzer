@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Document Analyzer - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Legal Document Analyzer</h1>
+      <h2>Settings</h2>
+    </header>
+    
+    <main>
+      <section id="appearance">
+        <h3>Appearance</h3>
+        
+        <div class="settings-group">
+          <label class="setting-item">
+            <span class="setting-label">Theme</span>
+            <select id="theme" class="setting-control">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="system">System Default</option>
+            </select>
+          </label>
+          
+          <label class="setting-item">
+            <span class="setting-label">Font Size</span>
+            <select id="fontSize" class="setting-control">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </label>
+          
+          <label class="toggle setting-item">
+            <span class="setting-label">Highlight Colors</span>
+            <div class="toggle-wrapper">
+              <input type="checkbox" id="high-contrast">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">High Contrast</span>
+            </div>
+          </label>
+        </div>
+      </section>
+      
+      <section id="analysis">
+        <h3>Analysis Settings</h3>
+        
+        <div class="settings-group">
+          <label class="toggle setting-item">
+            <span class="setting-label">Processing Mode</span>
+            <div class="toggle-wrapper">
+              <input type="checkbox" id="local-processing" checked>
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Local Processing Only</span>
+            </div>
+          </label>
+          
+          <div class="setting-item" id="api-key-container">
+            <span class="setting-label">API Key (for cloud processing)</span>
+            <input type="text" id="api-key" class="setting-control" placeholder="Enter your API key">
+            <span class="setting-help">Only needed if local processing is disabled</span>
+          </div>
+          
+          <label class="setting-item">
+            <span class="setting-label">Analysis Language</span>
+            <select id="language" class="setting-control">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+            </select>
+          </label>
+          
+          <label class="setting-item">
+            <span class="setting-label">Readability Formula</span>
+            <select id="readability" class="setting-control">
+              <option value="flesch">Flesch Reading Ease</option>
+              <option value="fk">Flesch-Kincaid Grade Level</option>
+              <option value="smog">SMOG Index</option>
+            </select>
+          </label>
+        </div>
+      </section>
+      
+      <section id="advanced">
+        <h3>Advanced Settings</h3>
+        
+        <div class="settings-group">
+          <label class="toggle setting-item">
+            <span class="setting-label">Auto-Analyze</span>
+            <div class="toggle-wrapper">
+              <input type="checkbox" id="auto-analyze">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Automatically analyze when page loads</span>
+            </div>
+          </label>
+          
+          <label class="toggle setting-item">
+            <span class="setting-label">Context Menu</span>
+            <div class="toggle-wrapper">
+              <input type="checkbox" id="context-menu" checked>
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Show 'Analyze Document' in right-click menu</span>
+            </div>
+          </label>
+          
+          <label class="toggle setting-item">
+            <span class="setting-label">Anonymous Usage Data</span>
+            <div class="toggle-wrapper">
+              <input type="checkbox" id="usage-data">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">Help improve by sending anonymous usage data</span>
+            </div>
+          </label>
+          
+          <div class="setting-item">
+            <span class="setting-label">Data Storage</span>
+            <button id="clear-data" class="danger-btn">Clear Saved Data</button>
+            <span class="setting-help">Removes all locally stored settings and data</span>
+          </div>
+        </div>
+      </section>
+      
+      <div class="actions">
+        <button id="reset-btn" class="secondary-btn">Reset to Defaults</button>
+        <button id="save-btn" class="primary-btn">Save Settings</button>
+      </div>
+    </main>
+    
+    <footer>
+      <p>Legal Document Analyzer v1.0.0</p>
+      <p><a href="help.html">Help & Documentation</a></p>
+    </footer>
+  </div>
+  
+  <div id="save-toast" class="toast">Settings saved successfully!</div>
+  
+  <script src="settings.js"></script>
+</body>
+</html>
